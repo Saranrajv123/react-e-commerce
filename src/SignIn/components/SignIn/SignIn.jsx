@@ -1,7 +1,8 @@
 import React, {Fragment, useState} from "react";
-import FormInput from "../../CommonUtils/FromInput/FormInput";
+import FormInput from "../../../CommonUtils/FromInput/FormInput";
 import "./SignIn.scss"
-import CustomButton from "../../CommonUtils/CustomButton/CustomButton";
+import CustomButton from "../../../CommonUtils/CustomButton/CustomButton";
+import {signInWithGoogle} from "../../../Firebase/Firebase";
 
 const SignIn = () => {
 
@@ -37,6 +38,7 @@ const SignIn = () => {
                     />
 
                     <CustomButton type="submit">Sign in</CustomButton>
+                    <CustomButton onClick={signInWithGoogle} >Sign in with Google</CustomButton>
                     {/*<input type="text" name={email} value={email} onChange={(event) => setEmail(event.target.value)}/>*/}
                     {/*<input type="text" name={password} value={password} onChange={(event) => setPassword(event.target.password)}/>*/}
                     {/*<button>Submit</button>*/}

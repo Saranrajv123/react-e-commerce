@@ -2,6 +2,7 @@ import React, {Fragment} from "react";
 import "./FormInput.scss"
 
 const FormInput = (props) => {
+    console.log(props.handleChange, "props")
     return (
         <Fragment>
             <div className="group">
