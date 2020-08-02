@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect, useState} from "react";
+import React, {Fragment, useState} from "react";
 import {Auth, createUserProfileDocument} from "../../../Firebase/Firebase"
 import FormInput from "../../../CommonUtils/FromInput/FormInput";
 import CustomButton from "../../../CommonUtils/CustomButton/CustomButton";
@@ -11,12 +11,6 @@ const SignUp = () => {
         password: "",
         confirmPassword: "",
     })
-
-
-    useEffect(() => {
-        console.log(userState.name)
-        console.log(setUserState)
-    }, [])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -35,7 +29,6 @@ const SignUp = () => {
             console.log(err.message, "err")
         }
 
-        console.log(userState, "userState")
     }
 
     return (
