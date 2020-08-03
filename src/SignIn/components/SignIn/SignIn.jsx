@@ -1,4 +1,6 @@
 import React, {Fragment, useState} from "react";
+import {connect} from "react-redux"
+import * as actions from "../../action"
 import FormInput from "../../../CommonUtils/FromInput/FormInput";
 import "./SignIn.scss"
 import CustomButton from "../../../CommonUtils/CustomButton/CustomButton";
@@ -12,8 +14,10 @@ const SignIn = () => {
 
     const formSubmit = (event) => {
         event.preventDefault()
+        // currentUser()
         setEmail("")
         setPassword("")
+
     }
 
 
@@ -48,4 +52,10 @@ const SignIn = () => {
     )
 }
 
-export default SignIn
+const mapDispatchToProps = (dispatch) => {
+    return {
+        currentUser: user => dispatch(actions.currentUser(user))
+    }
+}
+
+export default connect(null,mapDispatchToProps)(SignIn)

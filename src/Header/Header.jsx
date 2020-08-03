@@ -3,11 +3,10 @@ import {connect} from "react-redux"
 import {Link} from "react-router-dom"
 import {Auth} from "../Firebase/Firebase"
 import "./HeaderStyle.scss"
-import {currentUser} from "../SignIn/action";
-import userEvent from "@testing-library/user-event";
+import CartIcon from "../Cart/CartIcon/CartIcon";
+import CartDropdown from "../Cart/CardDropdown/CardDropdown";
 
 const Header = (props) => {
-    console.log(props,currentUser && props.currentUser, "currentUser")
     return (
         <Fragment>
             <div className="header">
@@ -25,14 +24,15 @@ const Header = (props) => {
                             <Link className="option" to="/signin">Sign in</Link>
                         )
                     }
+                    <CartIcon />
                 </div>
+                <CartDropdown />
             </div>
         </Fragment>
     )
 }
 
 const mapStateToProps = ({ userReducer }) => {
-    console.log(userReducer, "userEvent")
     return {
         currentUser: userReducer.currentUser,
     }
