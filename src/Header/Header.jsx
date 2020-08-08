@@ -26,15 +26,18 @@ const Header = (props) => {
                     }
                     <CartIcon />
                 </div>
-                <CartDropdown />
+                {
+                    props.toggleCartHidden ? null :  <CartDropdown />
+                }
             </div>
         </Fragment>
     )
 }
 
-const mapStateToProps = ({ userReducer }) => {
+const mapStateToProps = ({ userReducer, cardReducer }) => {
     return {
         currentUser: userReducer.currentUser,
+        toggleCartHidden: cardReducer.hidden
     }
 }
 

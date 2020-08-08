@@ -1,10 +1,10 @@
 import React, { Fragment } from "react"
 import "./CustomButton.scss"
 
-const CustomButton = ({ children, ...props }) => {
+const CustomButton = ({ children, inverted, ...props }) => {
     return (
         <Fragment>
-          <button className="custom-button" {...props}>
+          <button className={`${inverted ? "inverted" : ""} "custom-button" `} {...props}>
               {children}
           </button>
         </Fragment>

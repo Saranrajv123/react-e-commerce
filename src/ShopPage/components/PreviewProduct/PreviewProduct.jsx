@@ -3,14 +3,14 @@ import "./PreviewProduct.scss"
 import ProductCard from "../ProductCard/ProductCard";
 
 const PreviewProduct = (props) => {
-    // console.log(props)
+    console.log(props, "propssss")
     const renderItems = () => {
         return props.items.filter((data, index) => index < 4).map((item) => {
             return (
                 <Fragment>
                     <ProductCard
                         key={item.id}
-                        {...item}
+                        item={item}
                     />
                 </Fragment>
             )
